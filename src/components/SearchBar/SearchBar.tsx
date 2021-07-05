@@ -38,7 +38,7 @@ const Searchbar: FC<Props> = ({ id = 'search' }) => {
                 <input
                     id={id}
                     className="bg-transparent px-3 py-2 appearance-none w-full transition duration-150 ease-in-out pr-10"
-                    placeholder="Busque o que você precisa para a sua vida..."
+                    placeholder="O que você procura?"
                     defaultValue={router.query.q}
                     onKeyUp={handleKeyUp}
                 />
