@@ -21,6 +21,7 @@ Consiste na implementação básica de um e-Commerce Web
 | :----: | :-------------------- |
 |   ✔️   | Lista de produtos     |
 |   ✔️   | Página de produto     |
+|   ❌   | Buscar                |
 |   ❌   | Carrinho              |
 |   ❌   | Checkout              |
 |   ❌   | Confirmação da compra |
