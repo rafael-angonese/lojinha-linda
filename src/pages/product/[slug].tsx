@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import ImageSlider, { ImageType } from '../../components/ImageSlider';
+import ProductCard from '../../components/ProductCard';
 
 export default function Product() {
     const [images, setImages] = useState<ImageType[]>();
@@ -155,6 +156,18 @@ export default function Product() {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="lg:w-11/12 mt-8 flex flex-wrap m-auto p-auto">
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
                 </div>
             </section>
         </>
