@@ -4,12 +4,18 @@ import Link from 'next/link';
 import Bag from '../../assets/icons/Bag';
 import Heart from '../../assets/icons/Heart';
 
+import { useSidebarContext } from '../../hooks/useSidebarContext';
+
 const Layout: FC = () => {
+    const { toggleSideBar } = useSidebarContext();
     const [itemsCount, setItemsCount] = useState(5);
 
     return (
         <ul className="flex flex-row items-center justify-items-end h-full">
-            <li className="mr-6 cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary">
+            <li
+                onClick={toggleSideBar}
+                className="mr-6 cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary"
+            >
                 <Bag />
                 {itemsCount > 0 && (
                     <span className="pl-1 pr-1 border border-accent-1 bg-black text-white absolute round ed-full right-3 top-3 flex items-center justify-center font-bold text-xs">
