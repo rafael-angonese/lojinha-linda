@@ -1,14 +1,20 @@
 import { FC } from 'react';
+
 import UserNav from '../UserNav';
+
 import CloseIcon from '../../assets/icons/Close';
+
 import { useSidebarContext } from '../../hooks/useSidebarContext';
+
+import SidebarItem from './SidebarItem';
+
 const Sidebar: FC = () => {
     const { displaySidebar, toggleSideBar } = useSidebarContext();
 
     return (
         <>
             <aside
-                className={`transform top-0 right-0 w-1/4 p-4 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-50 ${
+                className={`transform top-0 right-0 w-1/4 p-4 bg-white fixed h-full ease-in-out transition-all duration-300 z-50 ${
                     displaySidebar ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
@@ -30,11 +36,48 @@ const Sidebar: FC = () => {
                     </div>
                 </div>
 
-                <p className="mt-4 text-gray-800">
-                    asdfasfasfsadf aaaaaaaaaaaaaa
-                </p>
-                <p className="text-gray-800">asdfasfasfsadf aaaaaaaaaaaaaa</p>
-                <p className="text-gray-800">asdfasfasfsadf aaaaaaaaaaaaaa</p>
+                <div className="flex flex-col justify-between h-full">
+                    <div className="flex flex-col flex-1 box-border overflow-auto hide-scroll-bar">
+                        <h1 className="pt-2 pb-2 text-2xl font-bold tracking-wide cursor-pointer mb-2">
+                            Meu carrinho
+                        </h1>
+
+                        <ul className="py-4 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
+                            <SidebarItem />
+                            <SidebarItem />
+                            <SidebarItem />
+                            <SidebarItem />
+                        </ul>
+                    </div>
+
+                    <div className="px-6 py-6 sm:px-6 border-t text-sm ">
+                        <ul className="pb-2">
+                            <li className="flex justify-between py-1">
+                                <span>Subtotal</span>
+                                <span>R$ 99,99</span>
+                            </li>
+                            <li className="flex justify-between py-1">
+                                <span>Taxes</span>
+                                <span>Calculated at checkout</span>
+                            </li>
+                            <li className="flex justify-between py-1">
+                                <span>Shipping</span>
+                                <span className="font-bold tracking-wide">
+                                    FREE
+                                </span>
+                            </li>
+                        </ul>
+                        <div className="flex justify-between border-t border-accent-2 py-3 font-bold mb-2">
+                            <span>Total</span>
+                            <span>R$ 99,99</span>
+                        </div>
+                        <div>
+                            <button className=" px-10 py-5 w-full text-center justify-center uppercase transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
+                                <span>Finalizar compra</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </aside>
         </>
     );
