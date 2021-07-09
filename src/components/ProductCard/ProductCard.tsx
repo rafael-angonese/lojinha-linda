@@ -1,6 +1,11 @@
 import { FC } from 'react';
 
-const ProductCard: FC = () => {
+type Props = {
+    name: string;
+    image: string;
+}
+
+const ProductCard: FC<Props> = ({ name, image }) => {
     return (
         <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <a className="block relative h-62 rounded overflow-hidden">
@@ -23,9 +28,9 @@ const ProductCard: FC = () => {
                     </button>
                 </div>
                 <img
-                    src="https://github.com/rafael-angonese.png"
+                    src={image}
                     alt="Produto"
-                    className="object-cover object-center w-full h-full block rounded-2xl"
+                    className="bg-white object-contain object-center w-full h-80 block rounded-2xl"
                 />
             </a>
             <div className="flex-auto justify-evenly">
@@ -45,9 +50,8 @@ const ProductCard: FC = () => {
                         <span className="mr-2 text-gray-400">Brasil</span>
                     </div>
                     <div className="flex items-center w-full justify-between min-w-0 ">
-                        <h2 className="text-lg mr-auto cursor-pointer text-gray-200 hover:text-purple-500">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic
+                        <h2 className="text-lg capitalize mr-auto cursor-pointer text-gray-200 hover:text-purple-500">
+                            {name}
                         </h2>
                     </div>
                 </div>
