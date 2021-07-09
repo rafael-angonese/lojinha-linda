@@ -1,11 +1,16 @@
 import { FC } from 'react';
 
-type Props = {
+type pokemonProps = {
+    id: number;
     name: string;
-    image: string;
+    image_url: string;
+}
+
+type Props = {
+    pokemon: pokemonProps
 };
 
-const ProductCard: FC<Props> = ({ name, image }) => {
+const ProductCard: FC<Props> = ({ pokemon }) => {
     return (
         <div className="lg:w-1/4 md:w-1/2 p-4 w-full transform transition duration-500 hover:scale-110">
             <a className="block relative h-62 rounded overflow-hidden">
@@ -28,7 +33,7 @@ const ProductCard: FC<Props> = ({ name, image }) => {
                     </button>
                 </div>
                 <img
-                    src={image}
+                    src={pokemon.image_url}
                     alt="Produto"
                     className="bg-white object-contain object-center w-full h-80 block rounded-2xl"
                 />
@@ -51,7 +56,7 @@ const ProductCard: FC<Props> = ({ name, image }) => {
                     </div>
                     <div className="flex items-center w-full justify-between min-w-0 ">
                         <h2 className="text-lg capitalize mr-auto cursor-pointer text-gray-200 hover:text-purple-500">
-                            {name}
+                            {pokemon.name}
                         </h2>
                     </div>
                 </div>

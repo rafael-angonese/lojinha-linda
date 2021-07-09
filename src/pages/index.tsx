@@ -4,6 +4,7 @@ import axios from '../services/axios';
 import { POKEAPI_URL } from '../constants/uri';
 
 type pokemonProps = {
+    id: number;
     name: string;
     url: string;
     image_url: string;
@@ -28,8 +29,8 @@ export default function Home({ pokemons }: Props) {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-wrap -m-4">
                         {pokemons &&
-                            pokemons.map(item => {
-                                return <ProductCard name={item.name} image={item.image_url} />;
+                            pokemons.map(pokemon => {
+                                return <ProductCard pokemon={pokemon} />;
                             })}
                     </div>
                 </div>
@@ -47,6 +48,7 @@ export async function getStaticProps() {
 
         return {
             ...pokemonItem,
+            id: pokeId,
             image_url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokeId}.svg`
         };
     });
