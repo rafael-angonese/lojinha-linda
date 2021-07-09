@@ -54,65 +54,6 @@ const ProductCard: FC = () => {
                 <div className="text-xl text-white font-semibold mt-1">
                     R$ 99,99
                 </div>
-                {/* <div className="lg:flex  py-4  text-sm text-gray-600">
-                    <div className="flex-1 inline-flex items-center  mb-3">
-                        <div className="w-full flex-none text-sm flex items-center text-gray-600">
-                            <ul className="flex flex-row justify-center items-center space-x-2">
-                                <li className="">
-                                    <span className="block p-1 border-2 border-gray-900 hover:border-blue-600 rounded-full transition ease-in duration-300">
-                                        <a
-                                            href="#blue"
-                                            className="block w-3 h-3 bg-blue-600 rounded-full"
-                                        ></a>
-                                    </span>
-                                </li>
-                                <li className="">
-                                    <span className="block p-1 border-2 border-gray-900 hover:border-yellow-400 rounded-full transition ease-in duration-300">
-                                        <a
-                                            href="#yellow"
-                                            className="block w-3 h-3  bg-yellow-400 rounded-full"
-                                        ></a>
-                                    </span>
-                                </li>
-                                <li className="">
-                                    <span className="block p-1 border-2 border-gray-900 hover:border-red-500 rounded-full transition ease-in duration-300">
-                                        <a
-                                            href="#red"
-                                            className="block w-3 h-3  bg-red-500 rounded-full"
-                                        ></a>
-                                    </span>
-                                </li>
-                                <li className="">
-                                    <span className="block p-1 border-2 border-gray-900 hover:border-green-500 rounded-full transition ease-in duration-300">
-                                        <a
-                                            href="#green"
-                                            className="block w-3 h-3  bg-green-500 rounded-full"
-                                        ></a>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="flex-1 inline-flex items-center mb-3">
-                        <span className="text-secondary whitespace-nowrap mr-3">
-                            Tamanho
-                        </span>
-                        <div className="cursor-pointer text-gray-400 ">
-                            <span className="hover:text-purple-500 p-1 py-0">
-                                P
-                            </span>
-                            <span className="hover:text-purple-500 p-1 py-0">
-                                M
-                            </span>
-                            <span className="hover:text-purple-500 p-1 py-0">
-                                G
-                            </span>
-                            <span className="hover:text-purple-500 p-1 py-0">
-                                GG
-                            </span>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="mt-2 flex space-x-2 text-sm font-medium justify-start">
                     <button className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
                         <span>Adicionar ao carrinho</span>
