@@ -3,11 +3,11 @@ import { FC } from 'react';
 type Props = {
     name: string;
     image: string;
-}
+};
 
 const ProductCard: FC<Props> = ({ name, image }) => {
     return (
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full transform transition duration-500 hover:scale-110">
             <a className="block relative h-62 rounded overflow-hidden">
                 <div className="absolute flex flex-col top-0 right-0 p-3">
                     <button className="transition ease-in duration-300 bg-gray-800  hover:text-purple-500 shadow hover:shadow-md text-gray-500 rounded-full w-8 h-8 text-center p-1">
