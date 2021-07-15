@@ -30,7 +30,7 @@ export default function Home({ pokemons }: Props) {
                     <div className="flex flex-wrap -m-4">
                         {pokemons &&
                             pokemons.map(pokemon => {
-                                return <ProductCard pokemon={pokemon} />;
+                                return <ProductCard key={pokemon.id} pokemon={pokemon} />;
                             })}
                     </div>
                 </div>
