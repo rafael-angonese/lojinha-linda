@@ -3,7 +3,17 @@ import Link from 'next/link';
 
 import Quantity from '../Quantity';
 
-const SidebarItem: React.FC = () => {
+type pokemonProps = {
+    id: number;
+    name: string;
+    image_url: string;
+};
+
+type Props = {
+    pokemon: pokemonProps;
+};
+
+const SidebarItem: React.FC<Props> = ({ pokemon }) => {
     const [removing, setRemoving] = useState(false);
     const [quantity, setQuantity] = useState<number>(5);
 
@@ -31,7 +41,7 @@ const SidebarItem: React.FC = () => {
             <div className="flex flex-row space-x-4 py-4">
                 <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer z-0">
                     <img
-                        src="https://github.com/rafael-angonese.png"
+                        src={pokemon.image_url}
                         alt="Produto"
                         width={150}
                         height={150}
@@ -40,7 +50,7 @@ const SidebarItem: React.FC = () => {
                 <div className="flex-1 flex flex-col text-base">
                     <Link href={'/product/123456'}>
                         <span className="font-medium cursor-pointer pb-1">
-                            Nome do produto
+                            {pokemon.name}
                         </span>
                     </Link>
 

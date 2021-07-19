@@ -5,11 +5,13 @@ import UserNav from '../UserNav';
 import CloseIcon from '../../assets/icons/Close';
 
 import { useSidebarContext } from '../../hooks/useSidebarContext';
+import { useCartContext } from '../../hooks/useCartContext';
 
 import SidebarItem from './SidebarItem';
 
 const Sidebar: FC = () => {
     const { displaySidebar, toggleSideBar } = useSidebarContext();
+    const { pokemons } = useCartContext();
 
     return (
         <>
@@ -43,10 +45,10 @@ const Sidebar: FC = () => {
                         </h1>
 
                         <ul className="py-4 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
-                            <SidebarItem />
-                            <SidebarItem />
-                            <SidebarItem />
-                            <SidebarItem />
+                            {pokemons &&
+                                pokemons.map(pokemon => {
+                                    return <SidebarItem pokemon={pokemon} />;
+                                })}
                         </ul>
                     </div>
 
@@ -57,13 +59,13 @@ const Sidebar: FC = () => {
                                 <span>R$ 99,99</span>
                             </li>
                             <li className="flex justify-between py-1">
-                                <span>Taxes</span>
-                                <span>Calculated at checkout</span>
+                                <span>Taxas</span>
+                                <span>Calculado ao finalizar</span>
                             </li>
                             <li className="flex justify-between py-1">
-                                <span>Shipping</span>
+                                <span>Envio</span>
                                 <span className="font-bold tracking-wide">
-                                    FREE
+                                    Grátis
                                 </span>
                             </li>
                         </ul>
