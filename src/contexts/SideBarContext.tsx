@@ -2,7 +2,7 @@ import { createContext, ReactNode, useState } from 'react';
 
 type SideBarContextType = {
     displaySidebar: boolean;
-    toggleSideBar: () => void;
+    toggleSideBar: (display: boolean) => void;
 };
 
 type SideBarContextProviderProps = {
@@ -14,8 +14,8 @@ export const SideBarContext = createContext({} as SideBarContextType);
 export function SideBarContextProvider(props: SideBarContextProviderProps) {
     const [displaySidebar, setDisplaySidebar] = useState(false);
 
-    function toggleSideBar() {
-        setDisplaySidebar(!displaySidebar);
+    function toggleSideBar(display: boolean) {
+        setDisplaySidebar(display);
     }
 
     return (

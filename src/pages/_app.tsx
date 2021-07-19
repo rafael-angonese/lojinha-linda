@@ -4,13 +4,16 @@ import type { AppProps } from 'next/app';
 
 import Layout from '../components/Layout';
 import { CartContextProvider } from '../contexts/CartContext';
+import { SideBarContextProvider } from '../contexts/SideBarContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <CartContextProvider>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <SideBarContextProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </SideBarContextProvider>
         </CartContextProvider>
     );
 }

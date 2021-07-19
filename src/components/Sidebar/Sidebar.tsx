@@ -21,7 +21,7 @@ const Sidebar: FC = () => {
                 <div className="flex flex-row justify-between">
                     <div className="flex items-center flex-1">
                         <button
-                            onClick={toggleSideBar}
+                            onClick={() => toggleSideBar(false)}
                             aria-label="Close"
                             className="hover:text-accent-5 transition ease-in-out duration-150 flex items-center focus:outline-none"
                         >

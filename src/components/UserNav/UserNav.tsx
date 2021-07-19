@@ -7,13 +7,13 @@ import Heart from '../../assets/icons/Heart';
 import { useSidebarContext } from '../../hooks/useSidebarContext';
 
 const Layout: FC = () => {
-    const { toggleSideBar } = useSidebarContext();
+    const { displaySidebar, toggleSideBar } = useSidebarContext();
     const [itemsCount, setItemsCount] = useState(5);
 
     return (
         <ul className="flex flex-row items-center justify-items-end h-full">
             <li
-                onClick={toggleSideBar}
+                onClick={() => toggleSideBar(!displaySidebar)}
                 className="mr-6 cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary"
             >
                 <Bag />

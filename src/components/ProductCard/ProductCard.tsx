@@ -4,13 +4,24 @@ type pokemonProps = {
     id: number;
     name: string;
     image_url: string;
-}
-
-type Props = {
-    pokemon: pokemonProps
 };
 
+type Props = {
+    pokemon: pokemonProps;
+};
+
+import { useCartContext } from '../../hooks/useCartContext';
+import { useSidebarContext } from '../../hooks/useSidebarContext';
+
 const ProductCard: FC<Props> = ({ pokemon }) => {
+    const { addPokemon } = useCartContext();
+    const { toggleSideBar } = useSidebarContext();
+
+    const addPokemonIntoCart = (pokemon: pokemonProps) => {
+        addPokemon(pokemon);
+        toggleSideBar(true);
+    };
+
     return (
         <div className="lg:w-1/4 md:w-1/2 p-4 w-full transform transition duration-500 hover:scale-110">
             <a className="block relative h-62 rounded overflow-hidden">
@@ -64,7 +75,10 @@ const ProductCard: FC<Props> = ({ pokemon }) => {
                     R$ 99,99
                 </div>
                 <div className="mt-2 flex space-x-2 text-sm font-medium justify-start">
-                    <button className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
+                    <button
+                        onClick={() => addPokemonIntoCart(pokemon)}
+                        className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 "
+                    >
                         <span>Adicionar ao carrinho</span>
                     </button>
                     <button className="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-gray-400 rounded-full w-9 h-9 text-center p-2">
