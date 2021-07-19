@@ -1,14 +1,15 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 
 import Bag from '../../assets/icons/Bag';
 import Heart from '../../assets/icons/Heart';
 
 import { useSidebarContext } from '../../hooks/useSidebarContext';
+import { useCartContext } from '../../hooks/useCartContext';
 
 const Layout: FC = () => {
     const { displaySidebar, toggleSideBar } = useSidebarContext();
-    const [itemsCount, setItemsCount] = useState(5);
+    const { pokemons } = useCartContext();
 
     return (
         <ul className="flex flex-row items-center justify-items-end h-full">
@@ -17,9 +18,9 @@ const Layout: FC = () => {
                 className="mr-6 cursor-pointer relative transition ease-in-out duration-100 flex items-center outline-none text-primary"
             >
                 <Bag />
-                {itemsCount > 0 && (
+                {pokemons.length > 0 && (
                     <span className="pl-1 pr-1 border border-accent-1 bg-black text-white absolute round ed-full right-3 top-3 flex items-center justify-center font-bold text-xs">
-                        {itemsCount}
+                        {pokemons.length}
                     </span>
                 )}
             </li>

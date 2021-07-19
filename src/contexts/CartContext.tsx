@@ -42,7 +42,9 @@ export function CartContextProvider(props: CartContextProviderProps) {
 
         localStorage.setItem('pokemos', JSON.stringify(data));
         setPokemons(data);
-        toast.dark("Pokemon adicionado com sucesso!")
+        toast.dark('Pokemon adicionado com sucesso!', {
+            position: toast.POSITION.TOP_CENTER
+        });
     };
 
     return (
