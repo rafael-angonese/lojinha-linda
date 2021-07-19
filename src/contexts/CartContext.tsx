@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 type pokemonProps = {
     id: number;
@@ -41,6 +42,7 @@ export function CartContextProvider(props: CartContextProviderProps) {
 
         localStorage.setItem('pokemos', JSON.stringify(data));
         setPokemons(data);
+        toast.dark("Pokemon adicionado com sucesso!")
     };
 
     return (
