@@ -44,11 +44,13 @@ const ProductCard: FC<Props> = ({ pokemon }) => {
                         </svg>
                     </button>
                 </div>
-                <img
-                    src={pokemon.image_url}
-                    alt="Produto"
-                    className="bg-white object-contain object-center w-full h-80 block rounded-2xl"
-                />
+                <Link href={`/product/${pokemon.id}`}>
+                    <img
+                        src={pokemon.image_url}
+                        alt="Produto"
+                        className="bg-white cursor-pointer object-contain object-center w-full h-80 block rounded-2xl"
+                    />
+                </Link>
             </a>
             <div className="flex-auto justify-evenly">
                 <div className="flex flex-wrap ">
@@ -67,9 +69,11 @@ const ProductCard: FC<Props> = ({ pokemon }) => {
                         <span className="mr-2 text-gray-400">Brasil</span>
                     </div>
                     <div className="flex items-center w-full justify-between min-w-0 ">
-                        <h2 className="text-lg capitalize mr-auto cursor-pointer text-gray-200 hover:text-purple-500">
-                            {pokemon.name}
-                        </h2>
+                        <Link href={`/product/${pokemon.id}`}>
+                            <h2 className="text-lg capitalize mr-auto cursor-pointer text-gray-200 hover:text-purple-500">
+                                {pokemon.name}
+                            </h2>
+                        </Link>
                     </div>
                 </div>
                 <div className="text-xl text-white font-semibold mt-1">
